@@ -113,7 +113,7 @@ disp.plot()
 plt.title('Confusion Matrix')
 plt.xlabel('Predicted Label')
 plt.ylabel('True Label')
-plt.savefig(os.path.join(result_path, 'confusion_matrix.png'))
+plt.savefig(os.path.join(result_path, 'CNN3_confusion_matrix.png'))
 
 #calculation of sensitivity and specificity
 tn, fp, fn, tp = confusion_matrix(test_labels, pred_labels).ravel()

@@ -21,7 +21,7 @@ def gen_loss_plot(train_loss, val_loss, result_path):
     plt.ylabel('Loss')
     plt.title('Training and Validation Loss against Epochs')
     plt.legend()
-    plt.savefig(os.path.join(result_path, 'training_and_val_loss.png'))
+    plt.savefig(os.path.join(result_path, 'CNN2_training_and_val_loss.png'))
 
 def gen_acc_plot(train_acc, val_acc, result_path):
     '''
@@ -61,7 +61,7 @@ def gen_confusion_matrix(test_labels, preds, result_path, data_flag):
     plt.title('Confusion Matrix')
     plt.xlabel('Predicted Label')
     plt.ylabel('True Label')
-    plt.savefig(os.path.join(result_path, 'confusion_matrix.png'))
+    plt.savefig(os.path.join(result_path, 'CNN3_confusion_matrix.png'))
 
 def gen_json(accuracy, sensitivity, specificity, result_path):
     '''
