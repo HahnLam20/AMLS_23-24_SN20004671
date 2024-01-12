@@ -17,20 +17,23 @@ AMLS_23_24_SN20004671
 |__A (Task A Code Folder) #contains code and results for Task A
 |  |__results #contains results for task A
 |  |__AdaBoostClassifier.py #contains AdaBoostClassifier model
-|  |__CNN.py #contains CNN model
+|  |__CNN2.py #contains 2 Convolutional-Layer CNN model
 |  |__KNN.py #contains KNN model
 |  |__LogisticRegression.py #contains Logistic Regression model
 |  |__ResNet50.py #contains ResNet50 model
 |  |__SVM.py #contains SVM model
 |__B
-|  |__results
-|  |__CNN.py
-|  |__ResNet50.py
-|__datasets
-|__pipeline
-|  |__data_analysis.py
-|  |__preprocessing.py
-|  |__modelcomparison.py
+|  |__results #contains example results from task B
+|  |__CNN2.py #contains the 2 Convolutional Layer CNN model
+|  |__CNN3.py #contains the 3 Convolutional Layer CNN model 
+|  |__ResNet50.py #contains ResNet50 model
+|__datasets #contains datasets used
+|  |__dummy_file.txt #placeholder file
+|__pipeline #pipeline folder to store data processing functions
+|  |__datasetanalysis.py #used to produce analysis of the dataset (to highlight class proportions + imbalances)
+|  |__preprocessing.py #used to preprocess data
+|  |__resultsanalysis.py #used to analyse and process results graphically
+|  |__utils.py #used to clear folders before each iteration
 |  config.ini #contains default and user-defined hyperparameters for models
 |  main.py #main file to run tasks and models from CLI
 |  README.md
@@ -82,6 +85,7 @@ These values will be taken if no hyperparameters are specified.
 'c_value' = 1
 'gamma_value' = 0.001
 ```
+**NOTE**: At the time of writing, only the SVM, CNN2 models for task A and CNN2, CNN3 models have been optimised and completed fully for the assignment. Other models are available for exploration, but some of the code format has not been updated to the same styles as those used for the assignment itself.
 ## Acknowledgements
 The datasets used in this project are from the MedMNIST repository, and are cited as follows:
 ```
