@@ -201,26 +201,10 @@ for epoch in range(epochs):
     print('Val Loss: {:.4f} Acc: {:.4f}'.format(epoch_loss, epoch_acc))
 
 #plotting training and validation loss
-# plt.figure(figsize=(10, 4))
-# plt.plot(train_loss, label='Train loss')
-# plt.plot(val_loss, label='Val loss')
-# plt.xlabel('Epoch')
-# plt.ylabel('Loss')
-# plt.title('Training and Validation Loss against Epochs')
-# plt.legend()
-# plt.savefig(os.path.join(result_path, 'training_and_val_loss.png'))
 gen_loss_plot(train_loss, val_loss, result_path)
 
 
 #plotting training and validation accuracy
-# plt.figure(figsize=(10, 4))
-# plt.plot(train_acc, label='Train acc')
-# plt.plot(val_acc, label='Val acc')
-# plt.xlabel('Epoch')
-# plt.ylabel('Accuracy')
-# plt.title('Training and Validation Accuracy against Epochs')
-# plt.legend()
-# plt.savefig(os.path.join(result_path, 'training_and_val_acc.png'))
 gen_acc_plot(train_acc, val_acc, result_path)
 
 #Evaluating model
@@ -253,17 +237,6 @@ plt.legend(['Correct', 'Incorrect'])
 plt.savefig(os.path.join(result_path, 'predictions_as_function_of_class_label.png'))
 
 #confusion matrix
-# ConfusionMatrixDisplay.from_predictions(
-#     y_true = test_labels,
-#     y_pred = preds,
-#     display_labels = ['Adipose', 'Background', 'Debris', 'Lymphocytes', 'Mucus', 'Smooth Muscle', 'Mucosa', 'Stroma', 'Tumor'],
-#     cmap = plt.cm.Blues,
-#     xticks_rotation='vertical'
-# )
-# plt.title('CNN3 Confusion Matrix')
-# plt.xlabel('Predicted Label')
-# plt.ylabel('True Label')
-# plt.savefig(os.path.join(result_path, 'confusion_matrix.png'))
 gen_confusion_matrix(test_labels, preds, result_path, data_flag)
 
 #Extracting true positive, true negative, false positive and false negative values for sensitivity and specificity
@@ -284,12 +257,4 @@ print('Sensitivity: {}%'.format(sensitivity))
 print('Specificity: {}%'.format(specificity))
 
 #Saving results to JSON
-# results = {
-#     'Accuracy': accuracy_score(test_labels, preds) * 100,
-#     'Sensitivity': sensitivity,
-#     'Specificity': specificity
-# }
-# with open(os.path.join(result_path, 'results.json'), 'w') as fp:
-#     json.dump(results, fp)
-#Generating Json file
 gen_json(accuracy, sensitivity, specificity, result_path)
